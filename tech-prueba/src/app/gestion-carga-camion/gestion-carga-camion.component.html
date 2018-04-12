@@ -1,0 +1,58 @@
+<form #formCarga="ngForm">
+  <div>
+    <div class="form-group row">
+      <h4 [translate]="'app.AdministrationLoad.title'"></h4>
+    </div>
+    <div class="form-group row">
+      <div class="form-group col-md-4">
+        <label for="place" class="control-label col-md-12" [translate]="'app.AdministrationLoad.employee'"></label>
+        <div class="col-md-12">
+          <select class="form-control" #empleado [(ngModel)]="formularioCargoDto.empleadoSeleccionado" id="empleado" name="empleado"
+            required>
+            <option *ngFor="let data of formularioCargoDto.listaEmpleados" [ngValue]="data">{{data.nombre}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group col-md-6 ">
+
+        <label  class="control-label col-md-12" [translate]="'app.AdministrationLoad.selectFile'"></label>
+        <div class="input-group col-md-12">
+          <div class="form-group  btn btn-success">
+            <input type="file" required class="form-control-file" (change)="imageChange($event)"
+            id="file">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div>
+    <button class="btn btn-success" [disabled]="!(formularioCargoDto.empleadoSeleccionado!=null && formularioCargoDto.listaCarga!=null)" (click)="procesar()" [translate]="'app.button.process'"></button>
+    <button class="btn btn-info" (click)="limpiarForm()" [translate]="'app.button.clean'"></button>
+  </div>
+</form>
+
+<div class="form-group row" *ngIf="formularioCargoDto.datosRespuestaCarga">
+  <div class="form-group col-md-6 ">
+    <br>
+    <br>
+
+    <h2 class="sub-header" [translate]="'app.AdministrationLoad.result'"></h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th [translate]="'app.AdministrationLoad.columns.posicion'"></th>
+            <th [translate]="'app.AdministrationLoad.columns.data'"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of formularioCargoDto.datosRespuestaCarga; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{data.cantidadViajes}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

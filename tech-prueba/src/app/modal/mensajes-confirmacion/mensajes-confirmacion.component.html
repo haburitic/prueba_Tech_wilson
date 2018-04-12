@@ -1,0 +1,16 @@
+
+<div class="{{messages.ngClass}}">
+    <h4 class="modal-title nav-item " >{{messages.title}}.
+      <button type="button" class="close"  aria-label="Close" (click)="cerrar()">
+          <span aria-hidden="true" class="badge badge-dark">&times;</span>
+    </button>
+    </h4>
+
+  </div>
+  <div class="modal-body">
+    <p>{{messages.observation}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="cerrar()" class="btn btn-outline-dark">Close</button>
+  </div>
+

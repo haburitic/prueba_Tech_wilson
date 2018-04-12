@@ -1,0 +1,53 @@
+{
+  "app": {
+    "language": {
+      "title": "Language",
+      "english": "English",
+      "spanish": "Spanish"
+    },
+    "menu": {
+      "menuSuperior": {
+        "account": "Account",
+        "dashboard": "Dashboard",
+        "settings": "Settings",
+        "profile": "Profile",
+        "help": "Help",
+        "search": "Search..."
+      },
+
+      "menuDerecho": {
+        "employeesmanagement": "Employees management",
+        "home":"Home",
+        "loadTruck":"Load Truck"
+      }
+    },
+
+    "AdministrationLoad": {
+      "title": "Administration Load",
+      "employee": "Employee",
+      "selectFile":"Select the file to process",
+      "result":"Result",
+      "columns":{
+        "posicion":"Posición",
+        "data":"datos"
+      }
+    },
+    "employeesmanagement":{
+      "title":"Employees Management",
+      "employee":"Employee Name",
+      "cargo":"Id"
+
+    },
+    "button":{
+      "process":"process",
+      "save":"Save",
+      "clean":"Clean"
+    },
+    "messages": {
+      "confirmation": "The transaction was successful",
+      "observation": "The saved was successful",
+      "danger":"Error",
+      "observationDanger":"An error occurred, contact the administrator"
+    }
+  }
+}

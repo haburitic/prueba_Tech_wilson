@@ -1,0 +1,53 @@
+{
+  "app": {
+    "language": {
+      "title": "Idioma",
+      "english": "Ingles",
+      "spanish": "Español"
+    },
+    "menu": {
+      "menuSuperior": {
+        "account": "Cuenta",
+        "dashboard": "Tablero",
+        "settings": "Configuración",
+        "profile": "Perfil",
+        "help": "Ayuda",
+        "search": "Buscar..."
+      },
+
+      "menuDerecho": {
+        "employeesmanagement": "Gestionar empleados",
+        "home":"Inicio",
+        "loadTruck":"Cargar Datos"
+      }
+    },
+
+    "AdministrationLoad": {
+      "title": "Gestión de carga",
+      "employee": "Empleado",
+      "selectFile":"Seleccionar el archivo para procesar",
+      "result":"Resultados",
+      "columns":{
+        "posicion":"Posición",
+        "data":"datos"
+      }
+    },
+    "employeesmanagement":{
+      "title":"Gestión Empleados",
+      "employee":"Nombre Empleado",
+      "cargo":"Id"
+
+    },
+    "button":{
+      "process":"Procesar",
+      "save":"Guardar",
+      "clean":"Limpiar"
+    },
+    "messages": {
+      "confirmation": "La transacción fue Exitosa",
+      "observation": "La transacción fue Exitosa",
+      "danger":"Error",
+      "observationDanger":"A ocurrido un error, contacte el administrador"
+    }
+  }
+}

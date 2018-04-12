@@ -1,0 +1,32 @@
+<nav class="navbar navbar navbar-toggleable-md border navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="btn btn-dark" data-toggle="collapse" data-target="#navbar"
+       aria-expanded="false" aria-controls="navbar" [translate]="'app.menu.menuSuperior.account'">
+      </button>
+
+    </div>
+    <app-idioma></app-idioma>
+
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="nav-item nav-link" href="#" [translate]="'app.menu.menuSuperior.dashboard'"></a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="#" [translate]="'app.menu.menuSuperior.settings'"></a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="#" [translate]="'app.menu.menuSuperior.profile'"></a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="#" [translate]="'app.menu.menuSuperior.help'" ></a>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder= "{{'app.menu.menuSuperior.search' | translate}}">
+
+      </form>
+    </div>
+  </div>
+</nav>

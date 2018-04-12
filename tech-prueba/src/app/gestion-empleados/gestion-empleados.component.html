@@ -1,0 +1,28 @@
+<form #formEmpleado="ngForm">
+  <div>
+    <div class="form-group row">
+      <h4 [translate]="'app.employeesmanagement.title'"></h4>
+    </div>
+    <div class="form-group row">
+      <div class="form-group col-md-4">
+        <label for="place" class="control-label col-md-12" [translate]="'app.employeesmanagement.employee'"></label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" [(ngModel)]="formularioEmpleadoDto.nombreEmpleado" id="nombreEmpleado"
+           required minlength="1" maxlength="20" #nombreEmpleado="ngModel" appOnlyletter  [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="place" class="control-label col-md-12" [translate]="'app.employeesmanagement.cargo'"></label>
+        <div class="col-md-12">
+          <input type="text" class="form-control" [(ngModel)]="formularioEmpleadoDto.nombreCargo" [ngModelOptions]="{standalone: true}" id="cargo"
+            required minlength="1" maxlength="20" #cargo="ngModel">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div>
+    <button class="btn btn-success" [disabled]="!formEmpleado.valid" (click)="guardar()" [translate]="'app.button.save'"></button>
+    <button class="btn btn-info" (click)="limpiar()" [translate]="'app.button.clean'"></button>
+  </div>
+</form>

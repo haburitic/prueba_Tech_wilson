@@ -1,0 +1,148 @@
+https://academia-binaria.com/enrutado-con-angular2-el-nuevo-spa/
+https://medium.com/williambastidasblog/angular-5-inicio-r%C3%A1pido-con-angular-cli-y-angular-material-e52e4ab0df3a
+https://www.w3schools.com/bootstrap4/bootstrap_forms.asp
+https://getbootstrap.com/docs/4.0/components/navbar/
+npm install bootstrap@4.0.0-beta.2 –save
+npm install –save @ng-bootstrap/ng-bootstrap
+
+
+
+
+Primero instalemos Angular-Cli, ejecutamos:
+
+npm install -g @angular/cli
+
+Si todo salio bien, el comando “ng -v” nos mostrara las versiones instaladas:
+ng -v
+
+2. Crear el proyecto
+Ahora podemos crear un proyecto angular utilizando el comando “ng new”, en este caso, nombraremos el proyecto “my-proyecto-angular”.
+
+ng new my-proyecto-angular
+cd my-proyecto-angular
+
+3. Instalamos las bibliotecas de Angular material
+npm install --save @angular/material @angular/cdk
+npm install --save @angular/animations
+Estas son las bibliotecas adicionales que necesitaremos más adelante para
+ejecutar el componente de Angular material, el indicador “ — save” agrega
+ng generate component my-new-component
+ng g component my-new-component # using the alias
+
+# components support relative path generation
+# if in the directory src/app/feature/ and you run
+ng g component productos
+# your component will be generated in src/app/feature/new-cmp
+# but if you were to run
+ng g component ./newer-cmp
+# your component will be generated in src/app/newer-cmp
+# if in the directory src/app you can also run
+ng g component feature/new-cmp
+# and your component will be generated in src/app/feature/new-cmp
+You can find all possible blueprints in the table below:
+
+Scaffold	Usage
+Component	ng g component my-new-component
+Directive	ng g directive my-new-directive
+Pipe	ng g pipe formatDate
+Service	ng g service my-new-service
+Class	ng g class my-new-class
+Guard	ng g guard my-new-guard
+Interface	ng g interface my-new-interface
+Enum	ng g enum formatDate
+Module	ng g module my-module
+
+ las dependencias a nuestro package.json.
+
+4. Configurando los estilos
+Con la configuración del entorno completa, ahora es el momento de modificar
+ algunas partes de la aplicación angular para asegurarnos de que estamos
+ utilizando los estilos y componentes material del framework.
+
+Abrimos el archivo angular-cli.json y modificamos la propiedad de
+styles styles.css a styles.scss.
+
+"styles": [
+  "styles.scss"
+]
+luego navegamos a la carpeta src y cambiamos el nombre de nuestro archivo styles.css a
+ styles.scss . Con esto cambiamos la extensión del archivo para que podamos admitir SCSS.
+
+Ahora editamos el archivo styles.scss y agregamos el siguiente código.
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-color: #f0f0f0;
+  font-family: Roboto, 'Helvetice New', 'Arial', sans-serif
+}
+Lo que hemos hecho es importar el tema Material indigo-pink.css
+que no es más que una combinación de colores de material design predefinidos.
+Puedes exploras otros temas en la misma ruta.
+
+Le quitamos el margen y el padding al html y al body,
+al body le agregamos un background-color gris, finalmente la fuente.
+
+5. EJecutar la aplicación
+Para ver la aplicaicon en el navegador ejecutamos:
+
+ng serve --open
+Usando la opción — open (o simplemente -o)
+nos abrirá automáticamente la aplicación en el navegador en “http: // localhost: 4200 /”
+
+
+6. Nuestro primer componente
+
+ng g component Home
+
+<app-home></app-home>
+
+
+
+
+10. Utilizando Angular Material
+Una vez integrado angular material en nuestro proyecto,
+podemos comenzar a utilizar sus componentes.
+En este caso utilizamos un toolbar para mostrar el titulo
+principal de nuestra aplicación con el color “primary” y
+todo el contenido de nuestra app lo colocamos dentro de una tarjeta mat-card.
+
+Modificaremos el archivo app.component.html:
+
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+</mat-toolbar>
+<mat-card>
+  <app-home></app-home>
+</mat-card>
+Por cada componente que utilicemos debemos importar la dependencia y agregar a los imports en el app.module.ts:
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+@NgModule({
+declarations: [
+AppComponent,
+HomeComponent
+],
+imports: [
+BrowserModule,
+MatToolbarModule,
+MatCardModule
+],
+providers: [],
+bootstrap: [AppComponent]
+})
+export class AppModule { }
+Para que la tarjeta no ocupe todo el ancho de la pantalla modificaremos el archivo app.component.scss:
+
+mat-card{
+  max-width: 960px;
+  margin: 0 auto;
+}
